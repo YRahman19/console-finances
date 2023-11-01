@@ -91,20 +91,32 @@ var finances = [
 
   var totalMonths = 0;
   var netTotal = 0;
+  var greatestPL = 0;
+  var increaseDate = "";
 
   for (var i = 0; i < finances.length; i++) {
 // calculation for the total months.
   totalMonths++;
 
   // calculating the net total for profit and losses
-  netTotal += finances[i][1] - finances[i][1];
+  netTotal += finances[i][1];
   
-//   changes in profit and losses 
-  var changesInProfitLosses = 0;
-  if (){
-    
+//  changes in profit and losses 
+  var changesPL = 0;
+  if (i < finances.length - 1) {
+    changesPL = finances[i + 1][1] - finances[i][1];
   }
 
+// this is for the greatest increase in profit/losses.
+// also greatest increase date variables if the current month's profit/losses is greater than the greatest increase in profit/losses.
+
+if (changesPL > greatestPL) {
+    greatestPL = changesPL;
+    increaseDate = finances[i + 1][0];
+
+    
+
+}
 
 
 

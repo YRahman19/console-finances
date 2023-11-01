@@ -87,9 +87,9 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099],
   ];
-//   
+// Variables 
 
-  var totalMonths = 0;
+  var totalMonths = finances.length;
   var netTotal = 0;
   var averagePL = 0;
   var greatestPL = 0;
@@ -99,12 +99,11 @@ var finances = [
 
   for (var i = 0; i < finances.length; i++) {
 // calculation for the total months.
-  totalMonths++;
 
-  // calculating the net total for profit and losses
+// calculating the net total for profit and losses
   netTotal += finances[i][1];
   
-//  changes in profit and losses 
+// changes in profit and losses 
   var changesPL = 0;
   if (i < finances.length - 1) {
     changesPL = finances[i + 1][1] - finances[i][1];
@@ -123,10 +122,25 @@ if (changesPL > greatestPL) {
 
 if (changesPL < greatDecreasePL) {
     greatDecreasePL = changesPL;
-    greatDecreasePL = finances[i + 1][0];
+    decreaseDate = finances[i + 1][0];
 }
 
+// adds the changes in profit and losses to the average change
 
+averagePL += changesPL;
+}
+
+// calculate the average changes in profit and losses. 
+averagePL /= totalMonths - 1;
+
+// logs the result to the console.
+console.log("Financial Analysis");
+console.log("-----------")
+console.log("Total Months: " + totalMonths);
+console.log("Total: " + "$" + netTotal);
+console.log("Average Change: " + averagePL.toFixed(2));
+console.log("Greatest Increase: " + increaseDate + " " + "$" + greatestPL);
+console.log("Greatest Decrease: " + decreaseDate + " " + "$" + greatDecreasePL);
 
   
   

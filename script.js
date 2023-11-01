@@ -91,8 +91,11 @@ var finances = [
 
   var totalMonths = 0;
   var netTotal = 0;
+  var averagePL = 0;
   var greatestPL = 0;
   var increaseDate = "";
+  var greatDecreasePL = 0;
+  var decreaseDate = "";
 
   for (var i = 0; i < finances.length; i++) {
 // calculation for the total months.
@@ -113,16 +116,17 @@ var finances = [
 if (changesPL > greatestPL) {
     greatestPL = changesPL;
     increaseDate = finances[i + 1][0];
+}
 
-    
+// the decrease for the profit/losses
+// also greatest decrease date variables if the current month's profit/losses is less than the greatest decrease in profit/losses.
 
+if (changesPL < greatDecreasePL) {
+    greatDecreasePL = changesPL;
+    greatDecreasePL = finances[i + 1][0];
 }
 
 
-
-
-
-}
 
   
   

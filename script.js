@@ -87,4 +87,39 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099],
   ];
+//   
+
+  var totalMonths = 0;
+  var netTotal = 0;
+
+  for (var i = 0; i < finances.length; i++) {
+// calculation for the total months.
+  totalMonths++;
+
+  // calculating the net total for profit and losses
+  netTotal += finances[i][1] - finances[i][1];
   
+//   changes in profit and losses 
+  var changesInProfitLosses = 0;
+  if (){
+    
+  }
+
+
+
+
+
+
+}
+
+  
+  
+
+
+
+
+
+
+
+
+
